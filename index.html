@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClinicaOnline MVP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-50 min-h-screen flex items-center justify-center p-4">
+  <main class="w-full max-w-md bg-white rounded-xl shadow p-6 space-y-6">
+    <h1 class="text-2xl font-bold text-center text-blue-800">ClinicaOnline</h1>
+
+    <!-- Login -->
+    <section id="loginSection">
+      <input id="loginUser" placeholder="Usuário" class="w-full p-2 border rounded mb-2" />
+      <input id="loginPass" type="password" placeholder="Senha" class="w-full p-2 border rounded mb-4" />
+      <button onclick="login()" class="w-full bg-blue-600 text-white py-2 rounded">Entrar</button>
+      <p class="text-sm text-center mt-2">Não tem conta? <button onclick="showRegister()" class="text-blue-600">Cadastre-se</button></p>
+    </section>
+
+    <!-- Cadastro -->
+    <section id="registerSection" class="hidden">
+      <input id="newUser" placeholder="Novo usuário" class="w-full p-2 border rounded mb-2" />
+      <input id="newPass" type="password" placeholder="Nova senha" class="w-full p-2 border rounded mb-4" />
+      <button onclick="register()" class="w-full bg-green-600 text-white py-2 rounded">Cadastrar</button>
+      <p class="text-sm text-center mt-2"><button onclick="showLogin()" class="text-blue-600">Voltar ao login</button></p>
+    </section>
+
+    <!-- Painel -->
+    <section id="painelSection" class="hidden">
+      <h2 class="text-xl font-semibold mb-4">Painel</h2>
+      <input id="nomePaciente" placeholder="Nome do paciente" class="w-full p-2 border rounded mb-2" />
+      <input id="dataConsulta" type="date" class="w-full p-2 border rounded mb-2" />
+      <input id="horaConsulta" type="time" class="w-full p-2 border rounded mb-2" />
+      <textarea id="motivoConsulta" placeholder="Motivo da consulta" class="w-full p-2 border rounded mb-2"></textarea>
+      <button onclick="agendar()" class="w-full bg-purple-600 text-white py-2 rounded">Agendar</button>
+      <div id="listaAgendamentos" class="mt-4 text-sm text-gray-700"></div>
+      <button onclick="logout()" class="mt-4 w-full bg-red-500 text-white py-2 rounded">Sair</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
